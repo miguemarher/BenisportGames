@@ -100,26 +100,194 @@ tbody tr:hover td{background:rgba(191,255,0,.05)}
 .news-date,.event-date{font-size:.75rem;color:var(--green);margin-bottom:8px;letter-spacing:1px}
 .news-content,.event-desc{font-size:.85rem;color:var(--gray);line-height:1.6}
 
+/* ===================== CHALLENGE ===================== */
+.challenge-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(191,255,0,.06);
+}
+
+.challenge-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 28px 32px 20px;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+}
+
+.challenge-badge {
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #000;
+  background: var(--green);
+  padding: 5px 14px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.challenge-week {
+  font-size: .8rem;
+  color: var(--gray);
+  letter-spacing: 1px;
+}
+
+.challenge-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+@media(max-width: 700px) {
+  .challenge-body { grid-template-columns: 1fr; }
+}
+
+.challenge-info {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  border-right: 1px solid rgba(255,255,255,.05);
+}
+
+@media(max-width: 700px) {
+  .challenge-info { border-right: none; border-bottom: 1px solid rgba(255,255,255,.05); }
+}
+
+.challenge-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  letter-spacing: 3px;
+  line-height: 1;
+  color: var(--white);
+}
+
+.challenge-title span { color: var(--green); }
+
+.challenge-desc {
+  font-size: .9rem;
+  color: var(--gray);
+  line-height: 1.7;
+}
+
+.challenge-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.challenge-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .5px;
+  color: var(--green);
+  background: var(--green-dim);
+  border: 1px solid var(--border);
+  padding: 5px 12px;
+  border-radius: 50px;
+}
+
+/* VIDEO */
+.challenge-video {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #080808;
+  min-height: 260px;
+}
+
+.video-wrap {
+  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.video-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+
+.video-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  width: 100%;
+  padding: 40px 20px;
+}
+
+.video-placeholder-icon {
+  width: 64px; height: 64px;
+  border-radius: 50%;
+  background: var(--green-dim);
+  border: 2px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.video-placeholder p {
+  color: var(--gray);
+  font-size: .85rem;
+  line-height: 1.6;
+}
+
+.video-placeholder strong {
+  display: block;
+  color: var(--white);
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+/* no challenge */
+.no-challenge {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--gray);
+}
+
+.no-challenge-icon { font-size: 3rem; margin-bottom: 16px; }
+.no-challenge h4 { font-family:'Bebas Neue',sans-serif; font-size:1.6rem; letter-spacing:3px; color:var(--white); margin-bottom:8px; }
+.no-challenge p { font-size:.85rem; }
+
+/* ===================== SPINNER / ERROR ===================== */
 .spinner-wrap{display:flex;align-items:center;justify-content:center;padding:60px;gap:14px;color:var(--gray);font-size:.9rem;letter-spacing:1px}
 .spinner{width:22px;height:22px;border:2px solid rgba(191,255,0,.2);border-top-color:var(--green);border-radius:50%;animation:spin .7s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 .error-msg{text-align:center;padding:40px;color:#f44;font-size:.9rem;line-height:1.8}
 .no-data{text-align:center;color:var(--gray);padding:40px;font-size:.9rem}
 
+/* ===================== ADMIN ===================== */
 #admin-toggle-wrap{position:fixed;bottom:24px;right:24px;z-index:999}
 .admin-fab{width:52px;height:52px;border-radius:50%;background:var(--green);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 0 24px rgba(191,255,0,.4);transition:transform var(--transition),box-shadow var(--transition);font-size:1.2rem}
 .admin-fab:hover{transform:scale(1.1);box-shadow:0 0 40px rgba(191,255,0,.6)}
-
 .admin-panel{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:2000;overflow-y:auto;padding:40px 20px;backdrop-filter:blur(8px)}
 .admin-panel.open{display:flex;align-items:flex-start;justify-content:center}
-.admin-box{background:#0d0d0d;border:1px solid var(--border);border-radius:20px;padding:36px;width:100%;max-width:620px;margin-top:20px}
+.admin-box{background:#0d0d0d;border:1px solid var(--border);border-radius:20px;padding:36px;width:100%;max-width:640px;margin-top:20px}
 .admin-box h4{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:3px;color:var(--green);margin-bottom:28px}
 .admin-close{float:right;background:transparent;border:none;color:var(--gray);cursor:pointer;font-size:1.4rem;line-height:1;margin-top:-4px;transition:color var(--transition)}
 .admin-close:hover{color:var(--white)}
 .admin-section-title{font-size:.7rem;letter-spacing:3px;color:var(--gray);text-transform:uppercase;margin:24px 0 12px;border-bottom:1px solid rgba(255,255,255,.05);padding-bottom:8px}
 .form-row{display:flex;gap:10px;margin-bottom:10px;flex-wrap:wrap}
-.form-row input,.form-row select{flex:1;min-width:120px;padding:12px 14px;background:#111;border:1px solid rgba(255,255,255,.1);border-radius:10px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color var(--transition)}
-.form-row input:focus,.form-row select:focus{border-color:var(--green)}
+.form-row input,.form-row select,.form-row textarea{flex:1;min-width:120px;padding:12px 14px;background:#111;border:1px solid rgba(255,255,255,.1);border-radius:10px;color:var(--white);font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color var(--transition);resize:vertical}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--green)}
 .form-row select option{background:#111}
 .btn-add{padding:12px 22px;background:var(--green);color:#000;font-weight:700;font-size:.85rem;border:none;border-radius:10px;cursor:pointer;transition:box-shadow var(--transition),transform var(--transition);white-space:nowrap}
 .btn-add:hover{box-shadow:0 0 20px rgba(191,255,0,.4);transform:translateY(-1px)}
@@ -160,6 +328,7 @@ footer span{color:var(--green)}
     <span></span><span></span><span></span>
   </button>
   <nav id="navMenu">
+    <a href="#challenge" class="nav-link">Reto Semana</a>
     <a href="#ranking" class="nav-link">Ranking</a>
     <a href="#athletes" class="nav-link">Atletas</a>
     <a href="#news" class="nav-link">Noticias</a>
@@ -180,9 +349,21 @@ footer span{color:var(--green)}
     <div class="countdown-sep">:</div>
     <div class="countdown-item"><div class="countdown-number" id="cd-s">--</div><div class="countdown-label">Seg</div></div>
   </div>
-  <a href="#ranking" class="hero-btn">Ver Clasificación Oficial →</a>
+  <a href="#challenge" class="hero-btn">Ver Reto de la Semana →</a>
 </section>
 
+<!-- ==================== RETO DE LA SEMANA ==================== -->
+<div class="section-wrap reveal" id="challenge">
+  <div class="section-header">
+    <h3>Reto de la Semana</h3>
+    <div class="section-line"></div>
+  </div>
+  <div id="challengeContainer">
+    <div class="spinner-wrap"><div class="spinner"></div>Cargando reto...</div>
+  </div>
+</div>
+
+<!-- ==================== RANKING ==================== -->
 <div class="section-wrap reveal" id="ranking">
   <div class="section-header"><h3>Ranking Oficial</h3><div class="section-line"></div></div>
   <div class="tabs">
@@ -203,6 +384,7 @@ footer span{color:var(--green)}
   </div>
 </div>
 
+<!-- ==================== ATLETAS ==================== -->
 <div class="section-wrap reveal" id="athletes">
   <div class="section-header"><h3>Perfiles de Atletas</h3><div class="section-line"></div></div>
   <div class="tabs">
@@ -213,11 +395,13 @@ footer span{color:var(--green)}
   <div class="tab-panel" id="panelAF"><div class="athletes-grid" id="athletesGridF"></div></div>
 </div>
 
+<!-- ==================== NOTICIAS ==================== -->
 <div class="section-wrap reveal" id="news">
   <div class="section-header"><h3>Noticias Oficiales</h3><div class="section-line"></div></div>
   <div class="news-list" id="newsContainer"></div>
 </div>
 
+<!-- ==================== EVENTOS ==================== -->
 <div class="section-wrap reveal" id="events">
   <div class="section-header"><h3>Próximos Eventos</h3><div class="section-line"></div></div>
   <div class="events-list" id="eventsContainer"></div>
@@ -242,6 +426,25 @@ footer span{color:var(--green)}
 <div class="admin-panel" id="adminPanel">
   <div class="admin-box">
     <h4>PANEL ADMIN <button class="admin-close" id="adminClose">✕</button></h4>
+
+    <!-- RETO -->
+    <div class="admin-section-title">🏆 Reto de la Semana</div>
+    <div class="form-row">
+      <input type="text" id="chTitle" placeholder="Nombre del reto (ej: Bar Hold Challenge)" style="flex:1" />
+    </div>
+    <div class="form-row">
+      <textarea id="chDesc" placeholder="Descripción del ejercicio y las normas..." rows="3" style="flex:1"></textarea>
+    </div>
+    <div class="form-row">
+      <input type="text" id="chUrl" placeholder="ID de YouTube (ej: dQw4w9WgXcQ)" style="flex:1" />
+      <button class="btn-add" id="btnSaveChallenge" onclick="saveChallenge()">💾 Guardar</button>
+    </div>
+    <p style="font-size:.75rem;color:var(--gray);margin-top:4px">
+      El ID es la parte final de la URL de YouTube: youtube.com/watch?v=<strong style="color:var(--white)">ESTE_ES_EL_ID</strong><br>
+      Deja el ID vacío si no tienes vídeo aún — se mostrará "Próximamente".
+    </p>
+
+    <!-- ATLETAS -->
     <div class="admin-section-title">Añadir Atleta</div>
     <div class="form-row">
       <input type="text" id="newName" placeholder="Nombre del atleta" maxlength="50" />
@@ -251,6 +454,8 @@ footer span{color:var(--green)}
     </div>
     <div class="admin-section-title">Atletas registrados</div>
     <div class="admin-list" id="adminAthleteList"></div>
+
+    <!-- NOTICIAS -->
     <div class="admin-section-title">Añadir Noticia</div>
     <div class="form-row">
       <input type="text" id="newNewsTitle" placeholder="Título" />
@@ -260,6 +465,8 @@ footer span{color:var(--green)}
     <div class="form-row">
       <input type="text" id="newNewsContent" placeholder="Contenido de la noticia" style="flex:1" />
     </div>
+
+    <!-- EVENTOS -->
     <div class="admin-section-title">Añadir Evento</div>
     <div class="form-row">
       <input type="text" id="newEventName" placeholder="Nombre del evento" />
@@ -269,6 +476,7 @@ footer span{color:var(--green)}
     <div class="form-row">
       <input type="text" id="newEventDesc" placeholder="Descripción del evento" style="flex:1" />
     </div>
+
     <div style="margin-top:32px;border-top:1px solid rgba(255,50,50,.2);padding-top:20px">
       <button class="btn-add" onclick="loadAll()" style="background:#333;color:var(--white)">🔄 Recargar datos</button>
     </div>
@@ -276,111 +484,120 @@ footer span{color:var(--green)}
 </div>
 
 <script>
-/* ================================================================
-   CONFIG — cambia solo ADMIN_PASS si quieres otra contraseña
-   ================================================================ */
 const API_URL    = "https://script.google.com/macros/s/AKfycby8WcIqdqeLtpEvgNIxHQDDLCudfdsM--zoccqWTOOLYIOXinsezP1YiGCOuwSFYZeS/exec";
 const ADMIN_PASS = "benisport2026";
 
-/* STATE */
-let athletes = [], news = [], events = [];
+let athletes = [], news = [], events = [], challenge = null;
 let adminUnlocked = false;
 
-/* ================================================================
-   JSONP — evita el bloqueo CORS de los navegadores
-   Funciona inyectando un <script> en vez de hacer fetch()
-   ================================================================ */
-let _cbCounter = 0;
-
+/* JSONP */
+let _cb = 0;
 function jsonp(url) {
   return new Promise((resolve, reject) => {
-    const cbName = '__jsonp_cb_' + (++_cbCounter);
-    const script = document.createElement('script');
-    const timer  = setTimeout(() => {
-      cleanup();
-      reject(new Error('Timeout: el script tardó demasiado'));
-    }, 10000);
-
-    function cleanup() {
-      clearTimeout(timer);
-      delete window[cbName];
-      if (script.parentNode) script.parentNode.removeChild(script);
-    }
-
-    window[cbName] = function(data) {
-      cleanup();
-      resolve(data);
-    };
-
-    script.src = url + (url.includes('?') ? '&' : '?') + 'callback=' + cbName;
-    script.onerror = () => { cleanup(); reject(new Error('Error al cargar el script')); };
-    document.head.appendChild(script);
+    const name = '__cb_' + (++_cb);
+    const s    = document.createElement('script');
+    const t    = setTimeout(() => { cleanup(); reject(new Error('Timeout')); }, 10000);
+    function cleanup() { clearTimeout(t); delete window[name]; s.parentNode && s.parentNode.removeChild(s); }
+    window[name] = d => { cleanup(); resolve(d); };
+    s.src = url + (url.includes('?')?'&':'?') + 'callback=' + name;
+    s.onerror = () => { cleanup(); reject(new Error('Error de red')); };
+    document.head.appendChild(s);
   });
 }
 
-/* GET — lee datos del Sheet via JSONP */
 function apiGet(sheet) {
-  return jsonp(`${API_URL}?sheet=${sheet}`)
-    .then(d => { if (!d.ok) throw new Error(d.error); return d.data; });
+  return jsonp(`${API_URL}?sheet=${sheet}`).then(d => { if(!d.ok) throw new Error(d.error); return d.data; });
 }
 
-/* POST — escribe datos al Sheet via fetch normal (POST no tiene CORS con Apps Script) */
 function apiPost(payload) {
   return fetch(API_URL, {
-    method: 'POST',
-    mode: 'no-cors',           // Apps Script acepta POST sin CORS
-    body: JSON.stringify({ ...payload, pass: ADMIN_PASS })
-  }).then(() => ({ ok: true }));  // no-cors no devuelve body, asumimos éxito
+    method:'POST', mode:'no-cors',
+    body: JSON.stringify({...payload, pass: ADMIN_PASS})
+  }).then(() => ({ok:true}));
 }
 
-/* ================================================================
-   LOAD
-   ================================================================ */
-function spinnerRow(id, cols, msg) {
-  document.getElementById(id).innerHTML =
-    `<tr><td colspan="${cols}"><div class="spinner-wrap"><div class="spinner"></div>${msg}</div></td></tr>`;
-}
-function spinnerDiv(id, msg) {
-  document.getElementById(id).innerHTML =
-    `<div class="spinner-wrap"><div class="spinner"></div>${msg}</div>`;
-}
+/* LOAD */
+function spinDiv(id, msg) { document.getElementById(id).innerHTML = `<div class="spinner-wrap"><div class="spinner"></div>${msg}</div>`; }
+function spinRow(id, cols, msg) { document.getElementById(id).innerHTML = `<tr><td colspan="${cols}"><div class="spinner-wrap"><div class="spinner"></div>${msg}</div></td></tr>`; }
 
 function loadAll() {
-  spinnerRow('rankingTableM', 3, 'Cargando...');
-  spinnerRow('rankingTableF', 3, 'Cargando...');
-  spinnerDiv('athletesGridM', 'Cargando atletas...');
-  spinnerDiv('athletesGridF', 'Cargando atletas...');
-  spinnerDiv('newsContainer',  'Cargando noticias...');
-  spinnerDiv('eventsContainer','Cargando eventos...');
+  document.getElementById('challengeContainer').innerHTML = `<div class="spinner-wrap"><div class="spinner"></div>Cargando reto...</div>`;
+  spinRow('rankingTableM',3,'Cargando...');
+  spinRow('rankingTableF',3,'Cargando...');
+  spinDiv('athletesGridM','Cargando atletas...');
+  spinDiv('athletesGridF','Cargando atletas...');
+  spinDiv('newsContainer','Cargando noticias...');
+  spinDiv('eventsContainer','Cargando eventos...');
 
-  Promise.all([apiGet('Athletes'), apiGet('News'), apiGet('Events')])
-    .then(([ath, nws, evts]) => {
-      athletes = ath.map(a => ({ ...a, points: Number(a.points) }));
-      news     = nws;
-      events   = evts;
+  Promise.all([apiGet('Athletes'), apiGet('News'), apiGet('Events'), apiGet('Challenge')])
+    .then(([ath, nws, evts, chl]) => {
+      athletes  = ath.map(a => ({...a, points: Number(a.points)}));
+      news      = nws;
+      events    = evts;
+      // Challenge: tomamos la primera fila con active=1, o la primera si no hay active
+      challenge = chl.find(c => String(c.active) === '1') || chl[0] || null;
       renderAll();
     })
     .catch(err => {
-      console.error('Error cargando datos:', err);
-      const html = `<div class="error-msg">
-        ⚠️ No se pudieron cargar los datos.<br>
-        <small style="color:var(--gray)">
-          Asegúrate de que el Apps Script está publicado como<br>
-          <strong style="color:var(--white)">"Cualquier persona"</strong> y que el Sheet tiene las hojas<br>
-          <strong style="color:var(--white)">Athletes · News · Events</strong>
-        </small>
-      </div>`;
-      ['rankingTableM','rankingTableF'].forEach(id =>
-        document.getElementById(id).innerHTML = `<tr><td colspan="3">${html}</td></tr>`);
-      ['athletesGridM','athletesGridF','newsContainer','eventsContainer'].forEach(id =>
-        document.getElementById(id).innerHTML = html);
+      console.error(err);
+      const html = `<div class="error-msg">⚠️ No se pudieron cargar los datos.<br><small style="color:var(--gray)">Revisa que el Apps Script esté actualizado y publicado.</small></div>`;
+      document.getElementById('challengeContainer').innerHTML = html;
+      ['rankingTableM','rankingTableF'].forEach(id => document.getElementById(id).innerHTML = `<tr><td colspan="3">${html}</td></tr>`);
+      ['athletesGridM','athletesGridF','newsContainer','eventsContainer'].forEach(id => document.getElementById(id).innerHTML = html);
     });
 }
 
-/* ================================================================
-   RENDER RANKING
-   ================================================================ */
-function getBadge(i) {
+/* ==================== RENDER CHALLENGE ==================== */
+function renderChallenge() {
+  const c = document.getElementById('challengeContainer');
+
+  if (!challenge || !challenge.title) {
+    c.innerHTML = `
+      <div class="no-challenge">
+        <div class="no-challenge-icon">🏋️</div>
+        <h4>Próximo reto en preparación</h4>
+        <p>El reto de esta semana se anunciará pronto. ¡Mantente atento!</p>
+      </div>`;
+    return;
+  }
+
+  const hasVideo  = challenge.youtube_url && challenge.youtube_url.trim() !== '';
+  const videoHtml = hasVideo
+    ? `<div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/${esc(challenge.youtube_url.trim())}?rel=0&modestbranding=1"
+          title="Explicación del reto"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+       </div>`
+    : `<div class="video-placeholder">
+        <div class="video-placeholder-icon">🎬</div>
+        <p><strong>Vídeo próximamente</strong>El vídeo explicativo del ejercicio se publicará en breve.</p>
+       </div>`;
+
+  c.innerHTML = `
+    <div class="challenge-card">
+      <div class="challenge-header">
+        <span class="challenge-badge">⚡ Reto activo</span>
+        <span class="challenge-week">Competición en curso</span>
+      </div>
+      <div class="challenge-body">
+        <div class="challenge-info">
+          <div class="challenge-title">${esc(challenge.title)}</div>
+          <div class="challenge-desc">${esc(challenge.description || '')}</div>
+          <div class="challenge-meta">
+            <span class="challenge-tag">🏆 Puntos en juego</span>
+            <span class="challenge-tag">📅 Esta semana</span>
+          </div>
+        </div>
+        <div class="challenge-video">${videoHtml}</div>
+      </div>
+    </div>`;
+}
+
+/* RENDER RANKING */
+function getBadge(i){
   if(i===0) return '<span class="badge badge-gold">🥇 1º</span>';
   if(i===1) return '<span class="badge badge-silver">🥈 2º</span>';
   if(i===2) return '<span class="badge badge-bronze">🥉 3º</span>';
@@ -388,280 +605,212 @@ function getBadge(i) {
 }
 
 function renderRanking(g) {
-  const list  = athletes.filter(a => String(a.gender).toUpperCase() === g).sort((a,b) => b.points - a.points);
+  const list  = athletes.filter(a=>String(a.gender).toUpperCase()===g).sort((a,b)=>b.points-a.points);
   const tbody = document.getElementById(`rankingTable${g}`);
   tbody.innerHTML = '';
+  if (!list.length) { tbody.innerHTML=`<tr><td colspan="3" class="no-data">Sin atletas</td></tr>`; }
+  else list.forEach((a,i)=>{ const tr=document.createElement('tr'); if(i===0)tr.classList.add('top1'); tr.innerHTML=`<td>${getBadge(i)}</td><td style="font-weight:${i<3?700:400}">${esc(a.name)}</td><td style="color:var(--green);font-weight:700">${a.points}</td>`; tbody.appendChild(tr); });
 
-  if (!list.length) {
-    tbody.innerHTML = `<tr><td colspan="3" class="no-data">Sin atletas registrados</td></tr>`;
-  } else {
-    list.forEach((a, i) => {
-      const tr = document.createElement('tr');
-      if (i === 0) tr.classList.add('top1');
-      tr.innerHTML = `<td>${getBadge(i)}</td><td style="font-weight:${i<3?700:400}">${esc(a.name)}</td><td style="color:var(--green);font-weight:700">${a.points}</td>`;
-      tbody.appendChild(tr);
-    });
-  }
-
-  const key = `chart${g}`;
-  if (window[key]) { window[key].destroy(); window[key] = null; }
-  if (!list.length) return;
-
-  window[key] = new Chart(document.getElementById(`rankingChart${g}`), {
-    type: 'bar',
-    data: {
-      labels: list.map(a => a.name.split(' ')[0]),
-      datasets: [{ data: list.map(a => a.points), backgroundColor: list.map((_,i) => i===0?'#bfff00':i===1?'#7ab800':'#3d5c00'), borderRadius: 8, borderSkipped: false }]
-    },
-    options: {
-      responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: c => ` ${c.raw} puntos` }, backgroundColor:'#111', titleColor:'#bfff00', bodyColor:'#fff', borderColor:'#bfff00', borderWidth:1 }},
-      scales: {
-        x: { ticks: { color:'#7a7a7a', font:{ family:'DM Sans', size:11 }}, grid:{ display:false }},
-        y: { ticks: { color:'#7a7a7a', font:{ family:'DM Sans', size:11 }}, grid:{ color:'rgba(255,255,255,.04)' }, beginAtZero:true }
-      }
-    }
+  const key=`chart${g}`; if(window[key]){window[key].destroy();window[key]=null;} if(!list.length) return;
+  window[key]=new Chart(document.getElementById(`rankingChart${g}`),{
+    type:'bar',
+    data:{labels:list.map(a=>a.name.split(' ')[0]),datasets:[{data:list.map(a=>a.points),backgroundColor:list.map((_,i)=>i===0?'#bfff00':i===1?'#7ab800':'#3d5c00'),borderRadius:8,borderSkipped:false}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>` ${c.raw} puntos`},backgroundColor:'#111',titleColor:'#bfff00',bodyColor:'#fff',borderColor:'#bfff00',borderWidth:1}},scales:{x:{ticks:{color:'#7a7a7a',font:{family:'DM Sans',size:11}},grid:{display:false}},y:{ticks:{color:'#7a7a7a',font:{family:'DM Sans',size:11}},grid:{color:'rgba(255,255,255,.04)'},beginAtZero:true}}}
   });
 }
 
-/* RENDER ATHLETES */
 function renderAthletes(g) {
-  const list = athletes.filter(a => String(a.gender).toUpperCase() === g).sort((a,b) => b.points - a.points);
-  const grid = document.getElementById(`athletesGrid${g}`);
-  grid.innerHTML = '';
-  if (!list.length) { grid.innerHTML = `<p class="no-data">Sin atletas registrados</p>`; return; }
-  const medals = ['🥇','🥈','🥉'];
-  list.forEach((a, i) => {
-    const card = document.createElement('div');
-    card.className = 'athlete-card';
-    card.innerHTML = `
-      <div class="athlete-avatar">${String(a.name).split(' ').map(p=>p[0]||'').join('').substring(0,2).toUpperCase()}</div>
-      <div class="athlete-name">${esc(a.name)}</div>
-      <div class="athlete-points">${a.points} puntos</div>
-      <div class="athlete-rank">${i<3?medals[i]:'#'+(i+1)} en clasificación</div>`;
-    grid.appendChild(card);
-  });
+  const list=athletes.filter(a=>String(a.gender).toUpperCase()===g).sort((a,b)=>b.points-a.points);
+  const grid=document.getElementById(`athletesGrid${g}`); grid.innerHTML='';
+  if(!list.length){grid.innerHTML=`<p class="no-data">Sin atletas</p>`;return;}
+  const medals=['🥇','🥈','🥉'];
+  list.forEach((a,i)=>{ const card=document.createElement('div'); card.className='athlete-card'; card.innerHTML=`<div class="athlete-avatar">${String(a.name).split(' ').map(p=>p[0]||'').join('').substring(0,2).toUpperCase()}</div><div class="athlete-name">${esc(a.name)}</div><div class="athlete-points">${a.points} puntos</div><div class="athlete-rank">${i<3?medals[i]:'#'+(i+1)} en clasificación</div>`; grid.appendChild(card); });
 }
 
-/* RENDER NEWS */
 function renderNews() {
-  const c = document.getElementById('newsContainer');
-  if (!news.length) { c.innerHTML = `<p class="no-data">Sin noticias disponibles</p>`; return; }
-  c.innerHTML = '';
-  [...news].sort((a,b) => new Date(b.date) - new Date(a.date)).forEach(n => {
-    const d = document.createElement('div'); d.className = 'news-item';
-    d.innerHTML = `<div class="news-dot"></div><div><div class="news-title">${esc(n.title)}</div><div class="news-date">${fmtDate(n.date)}</div><div class="news-content">${esc(n.content)}</div></div>`;
+  const c=document.getElementById('newsContainer');
+  if(!news.length){c.innerHTML=`<p class="no-data">Sin noticias</p>`;return;}
+  c.innerHTML='';
+  [...news].sort((a,b)=>new Date(b.date)-new Date(a.date)).forEach(n=>{
+    const d=document.createElement('div');d.className='news-item';
+    d.innerHTML=`<div class="news-dot"></div><div><div class="news-title">${esc(n.title)}</div><div class="news-date">${fmtDate(n.date)}</div><div class="news-content">${esc(n.content)}</div></div>`;
     c.appendChild(d);
   });
 }
 
-/* RENDER EVENTS */
 function renderEvents() {
-  const c = document.getElementById('eventsContainer');
-  if (!events.length) { c.innerHTML = `<p class="no-data">Sin eventos próximos</p>`; return; }
-  c.innerHTML = '';
-  [...events].sort((a,b) => new Date(a.date) - new Date(b.date)).forEach(e => {
-    const isPast = new Date(e.date) < new Date();
-    const d = document.createElement('div'); d.className = 'event-item';
-    d.innerHTML = `<div class="event-icon">${e.icon||'📅'}</div><div><div class="event-name">${esc(e.name)}</div><div class="event-date">${fmtDate(e.date)}${isPast?' · <span style="color:#f44">Finalizado</span>':''}</div><div class="event-desc">${esc(e.description)}</div></div>`;
+  const c=document.getElementById('eventsContainer');
+  if(!events.length){c.innerHTML=`<p class="no-data">Sin eventos próximos</p>`;return;}
+  c.innerHTML='';
+  [...events].sort((a,b)=>new Date(a.date)-new Date(b.date)).forEach(e=>{
+    const isPast=new Date(e.date)<new Date();
+    const d=document.createElement('div');d.className='event-item';
+    d.innerHTML=`<div class="event-icon">${e.icon||'📅'}</div><div><div class="event-name">${esc(e.name)}</div><div class="event-date">${fmtDate(e.date)}${isPast?' · <span style="color:#f44">Finalizado</span>':''}</div><div class="event-desc">${esc(e.description)}</div></div>`;
     c.appendChild(d);
   });
 }
 
-/* RENDER ADMIN LIST */
 function renderAdminList() {
-  const list = document.getElementById('adminAthleteList');
-  const sorted = [...athletes].sort((a,b) => b.points - a.points);
-  if (!sorted.length) { list.innerHTML = '<div class="no-data" style="padding:16px">Sin atletas</div>'; return; }
-  list.innerHTML = '';
-  sorted.forEach(a => {
-    const div = document.createElement('div'); div.className = 'admin-list-item';
-    div.innerHTML = `<span>${esc(a.name)} <span style="color:var(--green);font-weight:700">${a.points}pts</span> <span style="color:var(--gray);font-size:.75rem">(${a.gender==='M'?'♂':'♀'})</span></span><button class="btn-del" onclick="deleteAthlete('${a.id}')">Eliminar</button>`;
+  const list=document.getElementById('adminAthleteList');
+  const sorted=[...athletes].sort((a,b)=>b.points-a.points);
+  if(!sorted.length){list.innerHTML='<div class="no-data" style="padding:16px">Sin atletas</div>';return;}
+  list.innerHTML='';
+  sorted.forEach(a=>{
+    const div=document.createElement('div');div.className='admin-list-item';
+    div.innerHTML=`<span>${esc(a.name)} <span style="color:var(--green);font-weight:700">${a.points}pts</span> <span style="color:var(--gray);font-size:.75rem">(${a.gender==='M'?'♂':'♀'})</span></span><button class="btn-del" onclick="deleteAthlete('${a.id}')">Eliminar</button>`;
     list.appendChild(div);
   });
 }
 
 function renderAll() {
+  renderChallenge();
   renderRanking('M'); renderRanking('F');
   renderAthletes('M'); renderAthletes('F');
   renderNews(); renderEvents();
-  if (adminUnlocked) renderAdminList();
+  if (adminUnlocked) {
+    renderAdminList();
+    // Rellenar campos del reto en el admin
+    if (challenge) {
+      document.getElementById('chTitle').value = challenge.title || '';
+      document.getElementById('chDesc').value  = challenge.description || '';
+      document.getElementById('chUrl').value   = challenge.youtube_url || '';
+    }
+  }
 }
 
-/* ================================================================
-   ADMIN ACTIONS
-   ================================================================ */
+/* ==================== ADMIN ACTIONS ==================== */
 function setBtn(id, loading) {
-  const b = document.getElementById(id);
-  if (b) { b.disabled = loading; b.textContent = loading ? '...' : '+ Añadir'; }
+  const b=document.getElementById(id);
+  if(b){b.disabled=loading;b.textContent=loading?'...':id==='btnSaveChallenge'?'💾 Guardar':'+ Añadir';}
+}
+
+function saveChallenge() {
+  const title = document.getElementById('chTitle').value.trim();
+  const desc  = document.getElementById('chDesc').value.trim();
+  const url   = document.getElementById('chUrl').value.trim();
+  if (!title) { alert('El nombre del reto no puede estar vacío.'); return; }
+
+  setBtn('btnSaveChallenge', true);
+
+  // Primero limpiamos la hoja y añadimos la nueva fila
+  apiPost({ sheet:'Challenge', action:'clear' })
+    .then(() => apiPost({ sheet:'Challenge', action:'add', row:[title, desc, url, 1] }))
+    .then(() => {
+      challenge = { title, description: desc, youtube_url: url, active: '1' };
+      renderChallenge();
+      alert('✅ Reto guardado correctamente');
+    })
+    .catch(e => alert('Error: ' + e.message))
+    .finally(() => setBtn('btnSaveChallenge', false));
 }
 
 function addAthlete() {
-  const name   = document.getElementById('newName').value.trim();
-  const points = parseInt(document.getElementById('newPoints').value);
-  const gender = document.getElementById('newGender').value;
-  if (!name || isNaN(points) || points < 0) { alert('Rellena nombre y puntos correctamente.'); return; }
-  const id = Date.now();
-  setBtn('btnAddAthlete', true);
-  apiPost({ sheet:'Athletes', action:'add', row:[id, name, points, gender] })
-    .then(() => {
-      athletes.push({ id, name, points, gender });
-      document.getElementById('newName').value = '';
-      document.getElementById('newPoints').value = '';
-      renderAll();
-    })
-    .catch(e => alert('Error: ' + e.message))
-    .finally(() => setBtn('btnAddAthlete', false));
+  const name=document.getElementById('newName').value.trim();
+  const points=parseInt(document.getElementById('newPoints').value);
+  const gender=document.getElementById('newGender').value;
+  if(!name||isNaN(points)||points<0){alert('Rellena nombre y puntos.');return;}
+  const id=Date.now(); setBtn('btnAddAthlete',true);
+  apiPost({sheet:'Athletes',action:'add',row:[id,name,points,gender]})
+    .then(()=>{athletes.push({id,name,points,gender});document.getElementById('newName').value='';document.getElementById('newPoints').value='';renderAll();})
+    .catch(e=>alert('Error: '+e.message)).finally(()=>setBtn('btnAddAthlete',false));
 }
 
 function deleteAthlete(id) {
-  if (!confirm('¿Eliminar este atleta?')) return;
-  apiPost({ sheet:'Athletes', action:'delete', id })
-    .then(() => { athletes = athletes.filter(a => String(a.id) !== String(id)); renderAll(); })
-    .catch(e => alert('Error: ' + e.message));
+  if(!confirm('¿Eliminar este atleta?'))return;
+  apiPost({sheet:'Athletes',action:'delete',id})
+    .then(()=>{athletes=athletes.filter(a=>String(a.id)!==String(id));renderAll();})
+    .catch(e=>alert('Error: '+e.message));
 }
 
 function addNews() {
-  const title   = document.getElementById('newNewsTitle').value.trim();
-  const date    = document.getElementById('newNewsDate').value;
-  const content = document.getElementById('newNewsContent').value.trim();
-  if (!title || !date || !content) { alert('Rellena todos los campos.'); return; }
-  const id = Date.now();
-  setBtn('btnAddNews', true);
-  apiPost({ sheet:'News', action:'add', row:[id, title, date, content] })
-    .then(() => {
-      news.push({ id, title, date, content });
-      document.getElementById('newNewsTitle').value = '';
-      document.getElementById('newNewsDate').value  = '';
-      document.getElementById('newNewsContent').value = '';
-      renderNews();
-    })
-    .catch(e => alert('Error: ' + e.message))
-    .finally(() => setBtn('btnAddNews', false));
+  const title=document.getElementById('newNewsTitle').value.trim();
+  const date=document.getElementById('newNewsDate').value;
+  const content=document.getElementById('newNewsContent').value.trim();
+  if(!title||!date||!content){alert('Rellena todos los campos.');return;}
+  const id=Date.now(); setBtn('btnAddNews',true);
+  apiPost({sheet:'News',action:'add',row:[id,title,date,content]})
+    .then(()=>{news.push({id,title,date,content});document.getElementById('newNewsTitle').value='';document.getElementById('newNewsDate').value='';document.getElementById('newNewsContent').value='';renderNews();})
+    .catch(e=>alert('Error: '+e.message)).finally(()=>setBtn('btnAddNews',false));
 }
 
 function addEvent() {
-  const name        = document.getElementById('newEventName').value.trim();
-  const date        = document.getElementById('newEventDate').value;
-  const description = document.getElementById('newEventDesc').value.trim();
-  if (!name || !date || !description) { alert('Rellena todos los campos.'); return; }
-  const id = Date.now();
-  setBtn('btnAddEvent', true);
-  apiPost({ sheet:'Events', action:'add', row:[id, name, date, '📅', description] })
-    .then(() => {
-      events.push({ id, name, date, icon:'📅', description });
-      document.getElementById('newEventName').value = '';
-      document.getElementById('newEventDate').value  = '';
-      document.getElementById('newEventDesc').value  = '';
-      renderEvents();
-    })
-    .catch(e => alert('Error: ' + e.message))
-    .finally(() => setBtn('btnAddEvent', false));
+  const name=document.getElementById('newEventName').value.trim();
+  const date=document.getElementById('newEventDate').value;
+  const description=document.getElementById('newEventDesc').value.trim();
+  if(!name||!date||!description){alert('Rellena todos los campos.');return;}
+  const id=Date.now(); setBtn('btnAddEvent',true);
+  apiPost({sheet:'Events',action:'add',row:[id,name,date,'📅',description]})
+    .then(()=>{events.push({id,name,date,icon:'📅',description});document.getElementById('newEventName').value='';document.getElementById('newEventDate').value='';document.getElementById('newEventDesc').value='';renderEvents();})
+    .catch(e=>alert('Error: '+e.message)).finally(()=>setBtn('btnAddEvent',false));
 }
 
-/* ================================================================
-   LOCK SCREEN
-   ================================================================ */
-document.getElementById('adminFab').addEventListener('click', () => {
-  if (adminUnlocked) { document.getElementById('adminPanel').classList.add('open'); }
-  else { document.getElementById('lockScreen').classList.add('open'); setTimeout(() => document.getElementById('lockInput').focus(), 100); }
+/* LOCK */
+document.getElementById('adminFab').addEventListener('click',()=>{
+  if(adminUnlocked){document.getElementById('adminPanel').classList.add('open');}
+  else{document.getElementById('lockScreen').classList.add('open');setTimeout(()=>document.getElementById('lockInput').focus(),100);}
 });
-
-function tryUnlock() {
-  const val = document.getElementById('lockInput').value;
-  if (val === ADMIN_PASS) {
-    adminUnlocked = true;
+function tryUnlock(){
+  const val=document.getElementById('lockInput').value;
+  if(val===ADMIN_PASS){
+    adminUnlocked=true;
     document.getElementById('lockScreen').classList.remove('open');
-    document.getElementById('lockInput').value = '';
-    document.getElementById('lockError').textContent = '';
+    document.getElementById('lockInput').value='';
+    document.getElementById('lockError').textContent='';
     document.getElementById('adminPanel').classList.add('open');
     renderAdminList();
+    if(challenge){document.getElementById('chTitle').value=challenge.title||'';document.getElementById('chDesc').value=challenge.description||'';document.getElementById('chUrl').value=challenge.youtube_url||'';}
   } else {
-    document.getElementById('lockError').textContent = 'Contraseña incorrecta';
-    document.getElementById('lockInput').value = '';
+    document.getElementById('lockError').textContent='Contraseña incorrecta';
+    document.getElementById('lockInput').value='';
     document.getElementById('lockInput').focus();
   }
 }
+document.getElementById('btnUnlock').addEventListener('click',tryUnlock);
+document.getElementById('lockInput').addEventListener('keydown',e=>{if(e.key==='Enter')tryUnlock();});
+document.getElementById('lockScreen').addEventListener('click',e=>{if(e.target===document.getElementById('lockScreen')){document.getElementById('lockScreen').classList.remove('open');document.getElementById('lockError').textContent='';}});
+document.getElementById('adminClose').addEventListener('click',()=>document.getElementById('adminPanel').classList.remove('open'));
+document.getElementById('adminPanel').addEventListener('click',e=>{if(e.target===document.getElementById('adminPanel'))document.getElementById('adminPanel').classList.remove('open');});
 
-document.getElementById('btnUnlock').addEventListener('click', tryUnlock);
-document.getElementById('lockInput').addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(); });
-document.getElementById('lockScreen').addEventListener('click', e => {
-  if (e.target === document.getElementById('lockScreen')) {
-    document.getElementById('lockScreen').classList.remove('open');
-    document.getElementById('lockError').textContent = '';
-  }
-});
-document.getElementById('adminClose').addEventListener('click', () => document.getElementById('adminPanel').classList.remove('open'));
-document.getElementById('adminPanel').addEventListener('click', e => { if (e.target === document.getElementById('adminPanel')) document.getElementById('adminPanel').classList.remove('open'); });
-
-/* ================================================================
-   TABS
-   ================================================================ */
-function switchTab(g) {
-  ['M','F'].forEach(x => {
-    document.getElementById(`panel${x}`).classList.toggle('active', x===g);
-    document.getElementById(`tab${x}`).classList.toggle('active', x===g);
-  });
-}
-function switchAthleteTab(g) {
-  ['M','F'].forEach(x => {
-    document.getElementById(`panelA${x}`).classList.toggle('active', x===g);
-    document.getElementById(`tabA${x}`).classList.toggle('active', x===g);
-  });
-}
+/* TABS */
+function switchTab(g){['M','F'].forEach(x=>{document.getElementById(`panel${x}`).classList.toggle('active',x===g);document.getElementById(`tab${x}`).classList.toggle('active',x===g);});}
+function switchAthleteTab(g){['M','F'].forEach(x=>{document.getElementById(`panelA${x}`).classList.toggle('active',x===g);document.getElementById(`tabA${x}`).classList.toggle('active',x===g);});}
 
 /* NAV */
-const burger  = document.getElementById('burger');
-const navMenu = document.getElementById('navMenu');
-burger.addEventListener('click', () => {
-  const open = navMenu.classList.toggle('open');
-  burger.classList.toggle('open', open);
-  burger.setAttribute('aria-expanded', open);
-});
-document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => {
-  navMenu.classList.remove('open'); burger.classList.remove('open'); burger.setAttribute('aria-expanded', false);
-}));
-window.addEventListener('scroll', () => {
-  const y = window.scrollY + 100; let cur = '';
-  ['ranking','athletes','news','events'].forEach(id => { const el = document.getElementById(id); if (el && el.offsetTop <= y) cur = id; });
-  document.querySelectorAll('.nav-link').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + cur));
-  document.getElementById('mainHeader').classList.toggle('scrolled', window.scrollY > 20);
-}, { passive:true });
+const burger=document.getElementById('burger'),navMenu=document.getElementById('navMenu');
+burger.addEventListener('click',()=>{const o=navMenu.classList.toggle('open');burger.classList.toggle('open',o);burger.setAttribute('aria-expanded',o);});
+document.querySelectorAll('.nav-link').forEach(l=>l.addEventListener('click',()=>{navMenu.classList.remove('open');burger.classList.remove('open');burger.setAttribute('aria-expanded',false);}));
+window.addEventListener('scroll',()=>{
+  const y=window.scrollY+100;let cur='';
+  ['challenge','ranking','athletes','news','events'].forEach(id=>{const el=document.getElementById(id);if(el&&el.offsetTop<=y)cur=id;});
+  document.querySelectorAll('.nav-link').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+  document.getElementById('mainHeader').classList.toggle('scrolled',window.scrollY>20);
+},{passive:true});
 
 /* COUNTDOWN */
-const evDate = new Date("April 10, 2026 18:00:00").getTime();
-const cdEls  = { d:document.getElementById('cd-d'), h:document.getElementById('cd-h'), m:document.getElementById('cd-m'), s:document.getElementById('cd-s') };
-function pad(n) { return String(Math.max(0,n)).padStart(2,'0'); }
-function bump(el) { el.classList.remove('bump'); void el.offsetWidth; el.classList.add('bump'); }
-function tick() {
-  const dist = evDate - Date.now();
-  if (dist <= 0) { Object.values(cdEls).forEach(e => e.textContent='00'); return; }
-  const vals = { d:Math.floor(dist/864e5), h:Math.floor(dist%864e5/36e5), m:Math.floor(dist%36e5/6e4), s:Math.floor(dist%6e4/1e3) };
-  Object.entries(vals).forEach(([k,v]) => { const s=pad(v); if(cdEls[k].textContent!==s){bump(cdEls[k]);cdEls[k].textContent=s;} });
-}
-setInterval(tick, 1000); tick();
+const evDate=new Date("April 10, 2026 18:00:00").getTime();
+const cdEls={d:document.getElementById('cd-d'),h:document.getElementById('cd-h'),m:document.getElementById('cd-m'),s:document.getElementById('cd-s')};
+function pad(n){return String(Math.max(0,n)).padStart(2,'0')}
+function bump(el){el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump')}
+function tick(){const dist=evDate-Date.now();if(dist<=0){Object.values(cdEls).forEach(e=>e.textContent='00');return;}const vals={d:Math.floor(dist/864e5),h:Math.floor(dist%864e5/36e5),m:Math.floor(dist%36e5/6e4),s:Math.floor(dist%6e4/1e3)};Object.entries(vals).forEach(([k,v])=>{const s=pad(v);if(cdEls[k].textContent!==s){bump(cdEls[k]);cdEls[k].textContent=s;}});}
+setInterval(tick,1000);tick();
 
 /* PARTICLES */
-(function() {
-  const c = document.getElementById('particles'), ctx = c.getContext('2d');
-  let W, H, pts, raf;
-  function resize() { W = c.width = window.innerWidth; H = c.height = window.innerHeight; }
-  function init()   { pts = Array.from({length:80}, () => ({x:Math.random()*W, y:Math.random()*H, r:Math.random()*1.5+.4, vy:Math.random()*.3+.1, o:Math.random()*.12+.03})); }
-  function draw()   { ctx.clearRect(0,0,W,H); pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${p.o})`;ctx.fill();p.y+=p.vy;if(p.y>H+2){p.y=-2;p.x=Math.random()*W;}}); raf=requestAnimationFrame(draw); }
-  window.addEventListener('resize', () => { resize(); init(); });
-  document.addEventListener('visibilitychange', () => { if(document.hidden) cancelAnimationFrame(raf); else draw(); });
-  resize(); init(); draw();
-})();
+(function(){const c=document.getElementById('particles'),ctx=c.getContext('2d');let W,H,pts,raf;
+function resize(){W=c.width=window.innerWidth;H=c.height=window.innerHeight;}
+function init(){pts=Array.from({length:80},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.5+.4,vy:Math.random()*.3+.1,o:Math.random()*.12+.03}));}
+function draw(){ctx.clearRect(0,0,W,H);pts.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,255,255,${p.o})`;ctx.fill();p.y+=p.vy;if(p.y>H+2){p.y=-2;p.x=Math.random()*W;}});raf=requestAnimationFrame(draw);}
+window.addEventListener('resize',()=>{resize();init();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else draw();});
+resize();init();draw();})();
 
 /* REVEAL */
-const ro = new IntersectionObserver(es => { es.forEach(e => { if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);} }); }, { threshold:.08 });
-document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ro.unobserve(e.target);}});},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 
 /* UTILS */
-function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-function fmtDate(d) { try { return new Date(d+'T00:00:00').toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'}); } catch { return d; } }
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function fmtDate(d){try{return new Date(d+'T00:00:00').toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'});}catch{return d;}}
 
-/* INIT */
 loadAll();
 </script>
 </body>
