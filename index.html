@@ -33,7 +33,7 @@ nav a:hover,nav a.active{color:var(--green);background:var(--green-dim)}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media(max-width:768px){
   .burger{display:flex}
-  nav{position:fixed;top:64px;left:0;right:0;flex-direction:column;background:rgba(5,5,5,.97);backdrop-filter:blur(20px);padding:24px;gap:4px;transform:translateY(-110%);transition:transform var(--transition);border-bottom:1px solid var(--border);z-index:999}
+  nav{position:fixed;top:64px;left:0;right:0;flex-direction:column;background:rgba(5,5,5,.97);backdrop-filter:blur(20px);padding:24px;gap:4px;transform:translateY(-110%);transition:transform var(--transition);border-bottom:1px solid var(--border);z-index:1001;max-height:calc(100vh - 64px);overflow-y:auto}
   nav.open{transform:translateY(0)}
   nav a{font-size:1.1rem;padding:14px 20px;width:100%;text-align:center}
 }
@@ -291,8 +291,7 @@ footer span{color:var(--green)}
       <ul class="rules-list">
         <li>Una liga interna de retos físicos donde los participantes compiten semana a semana por acumular el mayor número de puntos.</li>
         <li>Cada semana se anuncia un nuevo reto con su vídeo explicativo. Tienes hasta la fecha límite para completarlo y enviar tu resultado.</li>
-        <li>Al final de la temporada, los 8 atletas con mas puntos se enfrentaran en una final.</li>
-        <li>Se acumulará un bote durante toda la temporada y se repartirá a los 3 ganadores de la final.</li>
+        <li>Al final de la temporada, el atleta con más puntos en cada modalidad se proclama campeón.</li>
       </ul>
     </div>
 
@@ -301,7 +300,7 @@ footer span{color:var(--green)}
       <div class="rules-block-title"><span class="rules-icon">📋</span> Inscripción y participación</div>
       <ul class="rules-list">
         <li>Cada reto tiene un coste de inscripción de <strong style="color:var(--white)">1€</strong> por participante.</li>
-        <li>Cada atleta dispone de <strong style="color:var(--white)">2 intentos</strong> por reto.</li>
+        <li>Cada atleta dispone de <strong style="color:var(--white)">1 o 2 intentos</strong> por reto — el mejor resultado es el que cuenta.</li>
         <li>El resultado debe registrarse antes de la fecha límite de cada reto. No se aceptan resultados fuera de plazo.</li>
         <li>La participación implica aceptar las normas de la competición.</li>
       </ul>
